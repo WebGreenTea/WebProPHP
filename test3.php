@@ -2,13 +2,14 @@
 <html>
 
 <body>
-
-    <form action="welcome_get.php" method="get">
-        Name: <input type="text" name="name"><br>
-        E-mail: <input type="text" name="email"><br>
-        <input type="submit">
-    </form>
-
+    <h1>
+        <?php
+        $a = 9-4+8*2%2;
+        echo $a;
+        
+        
+        ?>
+    </h1>
 </body>
 
 </html>
