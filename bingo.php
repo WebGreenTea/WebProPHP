@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Game</title>
+</head>
+
+<body>
+    <?php function checknum($arr)
+    {
+        $count = 0;
+        $countfound = 0;
+        $found = false;
+        $res = "";
+        while ($countfound < 5) {
+            $random = rand(0, 99);
+            $count++;
+            foreach ($arr as $i) {
+                if ($i == $random) {
+                    $res .= "ครั้งที่ " . $count . " = " . $random . " => ยินดีด้วย คุณมีเลขนี้<br>";
+                    $found = true;
+                    $countfound++;
+                    break;
+                }
+            }
+            if ($found === false) {
+                $res .= "ครั้งที่ " . $count . " = " . $random . " => เสียใจด้วย คุณไม่มีเลขนี้<br>";
+            } else {
+                $found = false;
+            }
+        }
+        return $res . "<br><p style='color:red;font-size:25px;text-align:center;'>คุณจบ BINGO เกมนี้ใน ครั้งที่ " . $count . " </p>";
+    } ?>
+    <?php if (isset($_POST['submit'])) : ?>
+        <p style="font-size: 20px;">
+            <?php
+            $res = $_POST['res'];
+            echo $res; ?>
+        </p>
+    <?php else : ?>
+        <h1 style="text-align: center;">
+            BINGO Game
+        </h1>
+        <center>
+            <table style="border-collapse: collapse;border: 1px solid;font-size: 30px;">
+                <?php
+                $numtable = array();
+                $res = "";
+                $count = 0;
+                for ($row = 1; $row <= 5; $row++) {
+                    echo "<tr>";
+                    for ($col = 1; $col <= 5; $col++) {
+                        $count++;
+                        $num = rand(0, 99);
+                        array_push($numtable, $num);
+                        echo "<td style='border-collapse: collapse;border: 1px solid;width:100px;text-align:center'>" . $num .
+                            "</td>";
+                    }
+                    echo "</tr>";
+                }
+                $res .= checknum($numtable);
+                ?>
+            </table>
+        </center>
+        <br>
+        <form method="post" action="#" style="text-align: center;">
+            <input type="hidden" value="<?php echo $res ?>" name="res">
+            <input type="submit" name="submit" value="START GAME" style="font-size:30px;background-color: blue; color:white;">
+
+        </form>
+    <?php endif ?>
+</body>
+
+</html>
