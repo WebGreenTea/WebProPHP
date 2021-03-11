@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'th_sarabun_newbold';
+    src: url('font/thsarabunnew_bold-webfont.woff2') format('woff2'),
+         url('font/thsarabunnew_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'th_sarabun_newregular';
+    src: url('font/thsarabunnew-webfont.woff2') format('woff2'),
+         url('font/thsarabunnew-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+    margin: 0;
+    font-family: th_sarabun_newbold;
+    font-size: 25px;
+    background-color: rgb(214, 241, 255);
+}
 .inline1{
     float: left;
     width: 50%;
@@ -5,13 +27,7 @@
 .inline2{
     float: left;
     width: 45%;
-    border: solid black 1px;
-}
-body{
-    margin: 0;
-    font-family: THSarabunNew;
-    font-size: 16px;
-    background-color: rgb(214, 241, 255);
+    margin-top: 70px;
 }
 img{
     display: block;
@@ -20,10 +36,10 @@ img{
 }
 .logo{
     margin-top: 150px;
-    width: 23%;
+    width: 30%;
 }
 .carpic{
-    width: 80%;
+    width: 70%;
 }
 .indexdiv{
     margin-left: 20%;
