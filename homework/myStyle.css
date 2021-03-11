@@ -1,0 +1,61 @@
+.inline1{
+    float: left;
+    width: 50%;
+}
+.inline2{
+    float: left;
+    width: 45%;
+    border: solid black 1px;
+}
+body{
+    margin: 0;
+    font-family: THSarabunNew;
+    font-size: 16px;
+    background-color: rgb(214, 241, 255);
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo{
+    margin-top: 150px;
+    width: 23%;
+}
+.carpic{
+    width: 80%;
+}
+.indexdiv{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.indeximg{
+    width: auto;
+    height: 150px;
+}
+.formindex{
+    text-align: center;
+}
+.centd{
+    text-align: center;
+}
+.center{
+    text-align: center;
+}
+#fontchange{
+    
+    font-size: 25px;
+}
+#fildpad{
+    padding-top: 45px;
+    padding-bottom: 45px;
+    
+}
+#fontbutton{
+    
+    font-size: 16px;
+}
+table{
+    background-color: white;
+}
+
