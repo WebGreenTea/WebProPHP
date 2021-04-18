@@ -1,7 +1,7 @@
 <?php
 $hostname = "localhost";
 $username = "root";
-$password = "12345";
+$password = "";
 $dbname = "bookit";
 $conn = mysqli_connect($hostname, $username, $password, $dbname);
 mysqli_set_charset($conn, "utf8");
@@ -53,6 +53,6 @@ VALUES
 '$UnitPrice','$UnitRent','$DayAmount','$image','$BDate')")
         or die(mysqli_error($conn));
     echo "<br><br><CENTER><H2>บันทึกข้อมูลเรียบร้อย</H2><BR><BR></CENTER>";
-    echo "<CENTER><A HREF=\"listofbook.php\">แสดงขอ้ มูลท้งัหมด</A></CENTER>";
+    echo "<CENTER><A HREF=\"listofbook2.php\">แสดงข้อมูลทั้งหมด</A></CENTER>";
 }
 mysqli_close($conn);

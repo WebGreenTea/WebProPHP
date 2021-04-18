@@ -1,7 +1,7 @@
 <?php
 $hostname = "localhost";
 $username = "root";
-$password = "12345";
+$password = "";
 $dbname = "bookit";
 $conn = mysqli_connect($hostname, $username, $password, $dbname);
 mysqli_set_charset($conn, "utf8");
@@ -12,8 +12,7 @@ function GetTypeSelect($ID)
     $sqltxt = mysqli_query($conn, "SELECT * FROM typebook ORDER BY TypeID")
         or die(mysqli_error($conn));
     if (!$sqltxt)
-        die("(FunctionDB:GetTypeSelect) SELECT typebook มี
-ข้อผิดพลาด" . mysql_error());
+        die("(FunctionDB:GetTypeSelect) SELECT typebook มีข้อผิดพลาด" . mysql_error());
     echo "<option value=\"\">เลือกประเภทหนังสือ</option>";
     while ($result = mysqli_fetch_object($sqltxt)) {
         if ($result->TypeID == $ID) { //ถ้าข้อมูลที่เลือกตรงกับข้อมูลในตารางให้เลือกรายการน้ัน
@@ -32,8 +31,7 @@ function GetStatusSelect($ID)
     $sql = "SELECT * FROM statusbook ORDER BY StatusID";
     $sqltxt = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     if (!$sqltxt)
-        die("(FunctionDB:GetStatusSelect) SELECT status มี
-ข้อผิดพลาด" . mysql_error());
+        die("(FunctionDB:GetStatusSelect) SELECT status มีข้อผิดพลาด" . mysql_error());
     echo "<option value=\"\">เลือกสถานะ</option>\n";
     while ($result = mysqli_fetch_object($sqltxt)) {
         if ($result->StatusID == $ID) {

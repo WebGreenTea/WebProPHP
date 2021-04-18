@@ -10,7 +10,7 @@
     <?php
         $hostname = "localhost";
         $username = "root";
-        $password = "12345";
+        $password = "";
         $dbname = "bookit";
         $conn = mysqli_connect($hostname, $username, $password, $dbname);
         mysqli_set_charset($conn, "utf8");
@@ -21,7 +21,10 @@
         $data = mysqli_fetch_array($result);
     ?>
 
-    <form action="savebookupdate.php" method="post" name="save" enctype="multipart/form-data">
+    
+    
+    <div align="center">
+    <form action="savebookupdate.php" method="post" name="save" enctype="multipart/form-data" >
         <table border="1" align="canter" bgcolor="#FFCCCC">
             <tr>
                 <td align="center" colspan="2" bgcolor="#FF99CC">
@@ -33,7 +36,7 @@
                     รหัสหนังสือ : 
                 </td>
                 <td>
-                    <input type="text" name="BookID" value="<?php $data["BookID"]?>" readonly>
+                    <input type="text" name="BookID" value="<?php echo $data["BookID"]?>" readonly >
                 </td>
             </tr>
             <tr>
@@ -41,7 +44,7 @@
                     ชื่อหนังสือ : 
                 </td>
                 <td>
-                    <input type="text" name="BookName" value="<?php $data["BookName"]?>">
+                    <input type="text" name="BookName" value="<?php echo $data["BookName"]?>">
                 </td>
             </tr>
             <tr>
@@ -49,7 +52,7 @@
                     สำนักพิมพ์ : 
                 </td>
                 <td>
-                    <input type="text" name="Publish" value="<?php $data["Publish"]?>">
+                    <input type="text" name="Publish" value="<?php echo $data["Publish"]?>">
                 </td>
             </tr>
             <tr>
@@ -57,7 +60,7 @@
                     ราคาซื้อ : 
                 </td>
                 <td>
-                    <input type="text" name="UnitPrice" value="<?php $data["UnitPrice"]?>">
+                    <input type="text" name="UnitPrice" value="<?php echo $data["UnitPrice"]?>">
                 </td>
             </tr>
             <tr>
@@ -65,7 +68,7 @@
                     ราคาเช่า : 
                 </td>
                 <td>
-                    <input type="text" name="UnitRent" value="<?php $data["UnitRent"]?>">
+                    <input type="text" name="UnitRent" value="<?php echo $data["UnitRent"]?>">
                 </td>
             </tr>
     
@@ -76,7 +79,6 @@
             <input type="reset" name="reset" value="ยกเลิก" style="cursor: hand">
         </div>
     </form>
-    <div align="center">
         <a href="listofbook2.php">กลับหน้าหลัก</a><br>
     </div>
 </body>

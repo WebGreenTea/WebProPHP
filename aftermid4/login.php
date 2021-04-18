@@ -3,23 +3,22 @@ session_start();
 $message = "";
 $hostname = "localhost";
 $username = "root";
-$password = "12345";
+$password = "";
 $dbname = "bookit";
 if(count($_POST)>0){
     $conn = new mysqli($hostname, $username, $password, $dbname);
-    $result = mysqli_query($con,"SELECT * FROM login_user
-    WHERE userName='". $_POST["username"]."'
-    and passWord = '".$_POST["passWord"]."'");
+    $result = mysqli_query($conn,"SELECT * FROM login_user WHERE userName='". $_POST["userName"]."' and passWord = '".$_POST["passWord"]."'");
     $row = mysqli_fetch_array($result);
     if(is_array($row)){
         $_SESSION["id"] = $row['userID'];
         $_SESSION["name"] = $row['userName'];
+        $_SESSION['level'] = $row['level'];
     }else{
         $message = "Invalid Username or Password";
     }
 }
 if(isset($_SESSION["id"])){
-    header('location:lisofbook2.php');
+    header('location:listofbook2.php');
 }
 ?>
 <!DOCTYPE html>
