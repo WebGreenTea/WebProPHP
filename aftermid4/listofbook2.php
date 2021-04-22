@@ -24,7 +24,7 @@
         or die(mysqli_error($conn)); ?>
 
     <center>
-        <h1><?php echo $level?>: <?php echo $_SESSION['name'] ?></h1>
+        <h1><?php echo $level ?>: <?php echo $_SESSION['name'] ?></h1>
     </center>
 
 
